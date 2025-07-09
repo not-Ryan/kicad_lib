@@ -446,9 +446,9 @@ impl FromSexpr for BoardLayer {
         let id = parser.expect_number()? as u8;
         let layer = parser.expect_string()?.parse::<LayerId>()?;
 
-        if layer as u8 != id {
-            return Err(KiCadParseError::NonMatchingLayerId { id, layer });
-        }
+        // if layer as u8 != id {
+        //     return Err(KiCadParseError::NonMatchingLayerId { id, layer });
+        // }
 
         let kind = parser.expect_symbol()?.parse::<BoardLayerKind>()?;
         let name = parser.maybe_string();
